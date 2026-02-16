@@ -1,0 +1,13 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/robots.txt/route": "/robots.txt",
+  "/page": "/",
+  "/pricing/page": "/pricing",
+  "/lessons-courses/page": "/lessons-courses",
+  "/about/page": "/about",
+  "/contact/page": "/contact",
+  "/privacy-policy/page": "/privacy-policy",
+  "/terms-conditions/page": "/terms-conditions",
+  "/testimonials/page": "/testimonials"
+}
