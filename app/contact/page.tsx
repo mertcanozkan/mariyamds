@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import BookingForm from "@/components/booking-form";
+import CalendarWidget from "@/components/calendar-widget";
 import PageHero from "@/components/page-hero";
 import { siteConfig } from "@/lib/site";
 
@@ -52,11 +53,9 @@ export default function ContactPage() {
           </article>
 
           <article className="force-light-text rounded-3xl border border-brand-accent/35 bg-gradient-to-br from-brand-deep/80 to-brand-ink p-6">
-            <h3 className="font-heading text-2xl text-white">Calendar Integration</h3>
-            <p className="mt-2 text-sm text-white/80">Calendar booking widget placeholder. Integrate Calendly or Setmore here for direct slot reservations.</p>
-            <div className="mt-4 rounded-2xl border border-dashed border-white/25 bg-white/5 p-5 text-center text-xs uppercase tracking-[0.12em] text-white/60">
-              Calendar Widget Placeholder
-            </div>
+            <h3 className="font-heading text-2xl text-white">Lesson Calendar</h3>
+            <p className="mt-2 text-sm text-white/80">Select your preferred lesson date and time, then confirm instantly via WhatsApp.</p>
+            <CalendarWidget whatsappNumber={siteConfig.whatsapp} />
           </article>
         </aside>
       </section>
