@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
-}
-
-html.dark {
   color-scheme: dark;
 }
 
@@ -15,59 +11,37 @@ html {
 }
 
 body {
-  @apply bg-brand-soft text-brand-ink antialiased transition-colors duration-300;
-  background-image: radial-gradient(circle at 20% 10%, rgba(254, 218, 106, 0.18), transparent 35%),
-    radial-gradient(circle at 80% 90%, rgba(57, 63, 77, 0.14), transparent 30%);
-  min-height: 100vh;
-}
-
-html.dark body {
   @apply bg-brand-ink text-brand-soft;
   background-image: radial-gradient(circle at 20% 10%, rgba(254, 218, 106, 0.16), transparent 35%),
     radial-gradient(circle at 80% 90%, rgba(57, 63, 77, 0.26), transparent 30%);
+  min-height: 100vh;
 }
 
-html.dark [class*="text-white"] {
+[class*="text-white"] {
   color: rgb(212 212 220) !important;
 }
 
-html.dark [class*="text-white/"] {
+[class*="text-white/"] {
   color: rgb(212 212 220 / 0.8) !important;
 }
 
-html.dark [class*="border-white"] {
+[class*="border-white"] {
   border-color: rgb(212 212 220 / 0.24) !important;
 }
 
-html.dark [class*="placeholder:text-white"]::placeholder {
+[class*="placeholder:text-white"]::placeholder {
   color: rgb(212 212 220 / 0.66) !important;
 }
 
-html:not(.dark) [class*="text-white"] {
-  color: rgb(29 30 34) !important;
+.force-light-text,
+.force-light-text [class*="text-white"] {
+  color: rgb(212 212 220) !important;
 }
 
-html:not(.dark) [class*="text-white/"] {
-  color: rgb(57 63 77) !important;
+.force-light-text [class*="text-white/"] {
+  color: rgb(212 212 220 / 0.82) !important;
 }
 
-html:not(.dark) [class*="border-white"] {
-  border-color: rgb(57 63 77 / 0.35) !important;
-}
-
-html:not(.dark) [class*="placeholder:text-white"]::placeholder {
-  color: rgb(57 63 77 / 0.85) !important;
-}
-
-html:not(.dark) .force-light-text,
-html:not(.dark) .force-light-text [class*="text-white"] {
-  color: rgb(255 255 255) !important;
-}
-
-html:not(.dark) .force-light-text [class*="text-white/"] {
-  color: rgb(226 232 240) !important;
-}
-
-html:not(.dark) .force-light-text [class*="border-white"] {
-  border-color: rgb(255 255 255 / 0.26) !important;
+.force-light-text [class*="border-white"] {
+  border-color: rgb(212 212 220 / 0.26) !important;
 }

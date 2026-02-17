@@ -4,7 +4,6 @@ import CookieBanner from "@/components/cookie-banner";
 import FloatingBookNow from "@/components/floating-book-now";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import ThemeToggle from "@/components/theme-toggle";
 import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
@@ -58,21 +57,17 @@ const localBusinessSchema = {
   ]
 };
 
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}}catch(e){}})();`;
-
 export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" suppressHydrationWarning>
+    <html lang="en-GB" className="dark">
       <body className="font-sans">
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <ThemeToggle />
         <FloatingBookNow />
         <CookieBanner />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
