@@ -49,12 +49,12 @@ export default function BookingForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-6 text-sm text-emerald-100" role="status" aria-live="polite">
+      <div className="rounded-3xl border border-brand-accent/40 bg-brand-accent/15 p-6 text-sm text-brand-soft" role="status" aria-live="polite">
         Thank you. Your booking request has been received. We will contact you shortly to confirm your lesson slot.
         <button
           type="button"
           onClick={() => setSubmitted(false)}
-          className="mt-4 inline-flex rounded-full border border-emerald-300/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-emerald-100"
+          className="mt-4 inline-flex rounded-full border border-brand-accent/65 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-brand-soft"
         >
           Submit Another Request
         </button>
@@ -74,7 +74,7 @@ export default function BookingForm() {
           onChange={(event) => setFormData((prev) => ({ ...prev, name: event.target.value }))}
           className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/50 focus:border-brand-accent focus:outline-none"
         />
-        {errors.name ? <p className="mt-1 text-xs text-red-300">{errors.name}</p> : null}
+        {errors.name ? <p className="mt-1 text-xs text-brand-accent">{errors.name}</p> : null}
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -88,7 +88,7 @@ export default function BookingForm() {
             onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
             className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/50 focus:border-brand-accent focus:outline-none"
           />
-          {errors.email ? <p className="mt-1 text-xs text-red-300">{errors.email}</p> : null}
+          {errors.email ? <p className="mt-1 text-xs text-brand-accent">{errors.email}</p> : null}
         </div>
 
         <div>
@@ -101,7 +101,7 @@ export default function BookingForm() {
             onChange={(event) => setFormData((prev) => ({ ...prev, phone: event.target.value }))}
             className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/50 focus:border-brand-accent focus:outline-none"
           />
-          {errors.phone ? <p className="mt-1 text-xs text-red-300">{errors.phone}</p> : null}
+          {errors.phone ? <p className="mt-1 text-xs text-brand-accent">{errors.phone}</p> : null}
         </div>
       </div>
 
@@ -130,7 +130,7 @@ export default function BookingForm() {
           className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/50 focus:border-brand-accent focus:outline-none"
           placeholder="Share your availability, confidence level, or goals."
         />
-        {errors.message ? <p className="mt-1 text-xs text-red-300">{errors.message}</p> : null}
+        {errors.message ? <p className="mt-1 text-xs text-brand-accent">{errors.message}</p> : null}
       </div>
 
       <label className="flex items-start gap-3 rounded-xl border border-white/20 bg-white/5 p-3 text-xs text-white/80">
@@ -142,7 +142,7 @@ export default function BookingForm() {
         />
         I consent to Mariyam DS storing my details to respond to this booking enquiry, in line with UK GDPR.
       </label>
-      {errors.consent ? <p className="-mt-2 text-xs text-red-300">{errors.consent}</p> : null}
+      {errors.consent ? <p className="-mt-2 text-xs text-brand-accent">{errors.consent}</p> : null}
 
       <button type="submit" className="w-full rounded-full bg-brand-accent px-5 py-3 text-sm font-bold text-brand-ink transition hover:bg-brand-coral">
         Send Booking Request

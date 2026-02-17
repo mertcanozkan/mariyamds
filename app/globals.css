@@ -16,31 +16,47 @@ html {
 
 body {
   @apply bg-brand-soft text-brand-ink antialiased transition-colors duration-300;
-  background-image: radial-gradient(circle at 20% 10%, rgba(215, 161, 95, 0.09), transparent 35%),
-    radial-gradient(circle at 80% 90%, rgba(25, 38, 70, 0.05), transparent 30%);
+  background-image: radial-gradient(circle at 20% 10%, rgba(254, 218, 106, 0.18), transparent 35%),
+    radial-gradient(circle at 80% 90%, rgba(57, 63, 77, 0.14), transparent 30%);
   min-height: 100vh;
 }
 
 html.dark body {
-  @apply bg-brand-ink text-white;
-  background-image: radial-gradient(circle at 20% 10%, rgba(215, 161, 95, 0.09), transparent 35%),
-    radial-gradient(circle at 80% 90%, rgba(240, 126, 110, 0.07), transparent 30%);
+  @apply bg-brand-ink text-brand-soft;
+  background-image: radial-gradient(circle at 20% 10%, rgba(254, 218, 106, 0.16), transparent 35%),
+    radial-gradient(circle at 80% 90%, rgba(57, 63, 77, 0.26), transparent 30%);
+}
+
+html.dark [class*="text-white"] {
+  color: rgb(212 212 220) !important;
+}
+
+html.dark [class*="text-white/"] {
+  color: rgb(212 212 220 / 0.8) !important;
+}
+
+html.dark [class*="border-white"] {
+  border-color: rgb(212 212 220 / 0.24) !important;
+}
+
+html.dark [class*="placeholder:text-white"]::placeholder {
+  color: rgb(212 212 220 / 0.66) !important;
 }
 
 html:not(.dark) [class*="text-white"] {
-  color: rgb(18 26 47) !important;
+  color: rgb(29 30 34) !important;
 }
 
 html:not(.dark) [class*="text-white/"] {
-  color: rgb(51 65 85) !important;
+  color: rgb(57 63 77) !important;
 }
 
 html:not(.dark) [class*="border-white"] {
-  border-color: rgb(148 163 184 / 0.35) !important;
+  border-color: rgb(57 63 77 / 0.35) !important;
 }
 
 html:not(.dark) [class*="placeholder:text-white"]::placeholder {
-  color: rgb(100 116 139 / 0.85) !important;
+  color: rgb(57 63 77 / 0.85) !important;
 }
 
 html:not(.dark) .force-light-text,

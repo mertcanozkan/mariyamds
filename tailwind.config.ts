@@ -11,11 +11,11 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          ink: "#121a2f",
-          deep: "#192646",
-          soft: "#F8F9FB",
-          accent: "#d7a15f",
-          coral: "#f07e6e"
+          ink: "#1d1e22",
+          deep: "#393f4d",
+          soft: "#d4d4dc",
+          accent: "#feda6a",
+          coral: "#e8c75c"
         }
       },
       fontFamily: {
@@ -23,8 +23,8 @@ const config: Config = {
         heading: ["Baskerville", "Times New Roman", "serif"]
       },
       boxShadow: {
-        glow: "0 20px 60px -30px rgba(18, 26, 47, 0.5)",
-        card: "0 16px 40px -24px rgba(18, 26, 47, 0.35)"
+        glow: "0 20px 60px -30px rgba(29, 30, 34, 0.65)",
+        card: "0 16px 40px -24px rgba(29, 30, 34, 0.5)"
       },
       keyframes: {
         "gradient-shift": {
