@@ -4,9 +4,9 @@ export const siteConfig = {
     "Premium automatic driving lessons in Stoke Newington with a professional female instructor. Calm, confidence-building instruction for beginners to advanced learners.",
   url: "https://www.mariyamds.co.uk",
   location: "Stoke Newington, London, UK",
-  phone: "+44 7700 900123",
+  phone: "+44 7812 157242",
   email: "hello@mariyamds.co.uk",
-  whatsapp: "447700900123"
+  whatsapp: "447812157242"
 };
 
 export const navLinks = [
