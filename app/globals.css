@@ -12,36 +12,36 @@ html {
 
 body {
   @apply bg-brand-ink text-brand-soft;
-  background-image: radial-gradient(circle at 20% 10%, rgba(254, 218, 106, 0.16), transparent 35%),
-    radial-gradient(circle at 80% 90%, rgba(57, 63, 77, 0.26), transparent 30%);
+  background-image: radial-gradient(circle at 20% 10%, rgba(180, 255, 0, 0.16), transparent 35%),
+    radial-gradient(circle at 80% 90%, rgba(160, 166, 176, 0.14), transparent 30%);
   min-height: 100vh;
 }
 
 [class*="text-white"] {
-  color: rgb(212 212 220) !important;
+  color: rgb(242 242 242) !important;
 }
 
 [class*="text-white/"] {
-  color: rgb(212 212 220 / 0.8) !important;
+  color: rgb(160 166 176) !important;
 }
 
 [class*="border-white"] {
-  border-color: rgb(212 212 220 / 0.24) !important;
+  border-color: rgb(160 166 176 / 0.28) !important;
 }
 
 [class*="placeholder:text-white"]::placeholder {
-  color: rgb(212 212 220 / 0.66) !important;
+  color: rgb(160 166 176 / 0.7) !important;
 }
 
 .force-light-text,
 .force-light-text [class*="text-white"] {
-  color: rgb(212 212 220) !important;
+  color: rgb(242 242 242) !important;
 }
 
 .force-light-text [class*="text-white/"] {
-  color: rgb(212 212 220 / 0.82) !important;
+  color: rgb(160 166 176) !important;
 }
 
 .force-light-text [class*="border-white"] {
-  border-color: rgb(212 212 220 / 0.26) !important;
+  border-color: rgb(160 166 176 / 0.28) !important;
 }

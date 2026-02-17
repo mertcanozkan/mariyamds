@@ -54,7 +54,7 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal>
-          <article className="force-light-text rounded-3xl border border-brand-accent/35 bg-gradient-to-br from-brand-deep/80 to-brand-ink p-7">
+          <article className="force-light-text rounded-3xl border border-brand-accent/35 bg-gradient-to-br from-brand-ink/95 to-brand-deep/88 p-7">
             <h2 className="font-heading text-3xl text-white">Teaching Philosophy</h2>
             <p className="mt-4 text-sm leading-relaxed text-white/85">
               Every learner progresses differently. Lessons are adapted to your pace while maintaining clear standards for control, awareness, and safe decision-making.

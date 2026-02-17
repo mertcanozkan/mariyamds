@@ -7,7 +7,7 @@ import TrustBadges from "./trust-badges";
 export default function Hero() {
   return (
     <section className="force-light-text relative overflow-hidden px-4 pb-16 pt-14 md:px-8 md:pt-20">
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_right,#feda6a3d,transparent_45%),radial-gradient(circle_at_bottom_left,#d4d4dc1f,transparent_40%),linear-gradient(120deg,#1d1e22,#393f4d,#1d1e22)] bg-[length:180%_180%] animate-gradient-shift" />
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_right,#B4FF0040,transparent_45%),radial-gradient(circle_at_bottom_left,#A0A6B022,transparent_40%),linear-gradient(120deg,#121417,#1C1F24,#121417)] bg-[length:180%_180%] animate-gradient-shift" />
       <div className="absolute inset-0 -z-10 opacity-30" style={{ backgroundImage: "url('/images/noise.svg')" }} />
 
       <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-2">

@@ -12,7 +12,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="force-light-text sticky top-0 z-50 border-b border-white/10 bg-brand-ink/85 backdrop-blur-xl">
+    <header className="force-light-text sticky top-0 z-50 border-b border-white/10 bg-brand-ink/95 backdrop-blur-xl">
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:px-8" aria-label="Primary">
         <Link href="/" className="font-heading text-xl text-white">
           Mariyam <span className="text-brand-accent">DS</span>

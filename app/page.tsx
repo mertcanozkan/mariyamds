@@ -51,7 +51,7 @@ export default function HomePage() {
               </div>
             </article>
 
-            <aside className="force-light-text rounded-3xl border border-brand-accent/30 bg-gradient-to-br from-brand-deep/80 to-brand-ink p-8">
+            <aside className="force-light-text rounded-3xl border border-brand-accent/30 bg-gradient-to-br from-brand-ink/95 to-brand-deep/90 p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">Availability Update</p>
               <h3 className="mt-3 font-heading text-2xl text-white">Limited weekly slots</h3>
               <p className="mt-3 text-sm text-white/80">Due to high demand for female automatic instructors in North London, only a limited number of new learner slots are opened each week.</p>

@@ -52,7 +52,7 @@ export default function ContactPage() {
             </div>
           </article>
 
-          <article className="force-light-text rounded-3xl border border-brand-accent/35 bg-gradient-to-br from-brand-deep/80 to-brand-ink p-6">
+          <article className="force-light-text rounded-3xl border border-brand-accent/35 bg-gradient-to-br from-brand-ink/95 to-brand-deep/88 p-6">
             <h3 className="font-heading text-2xl text-white">Lesson Calendar</h3>
             <p className="mt-2 text-sm text-white/80">Select your preferred lesson date and time, then confirm instantly via WhatsApp.</p>
             <CalendarWidget whatsappNumber={siteConfig.whatsapp} />

@@ -15,8 +15,8 @@ export default function PricingCard({ title, price, subtitle, description, featu
   return (
     <article
       className={cn(
-        "relative rounded-3xl border bg-white/90 p-6 text-brand-ink shadow-card transition hover:-translate-y-1 dark:border-brand-soft/20 dark:bg-brand-deep/70 dark:text-brand-soft",
-        popular ? "border-brand-accent ring-2 ring-brand-accent/40" : "border-brand-deep/20"
+        "relative rounded-3xl border bg-brand-deep/72 p-6 text-brand-soft shadow-card transition hover:-translate-y-1",
+        popular ? "border-brand-accent ring-2 ring-brand-accent/40" : "border-brand-soft/20"
       )}
     >
       {popular ? (
@@ -26,14 +26,14 @@ export default function PricingCard({ title, price, subtitle, description, featu
       ) : null}
       <h3 className="font-heading text-2xl">{title}</h3>
       <p className="mt-3 text-4xl font-bold">{price}</p>
-      <p className="text-sm text-brand-deep/80 dark:text-brand-soft/75">{subtitle}</p>
-      <p className="mt-3 text-sm text-brand-deep/90 dark:text-brand-soft/82">{description}</p>
-      <ul className="mt-4 space-y-2 text-sm text-brand-deep/90 dark:text-brand-soft/82">
+      <p className="text-sm text-brand-muted">{subtitle}</p>
+      <p className="mt-3 text-sm text-brand-muted">{description}</p>
+      <ul className="mt-4 space-y-2 text-sm text-brand-muted">
         {features.map((feature) => (
           <li key={feature}>- {feature}</li>
         ))}
       </ul>
-      <Link href="/contact" className="mt-6 inline-flex rounded-full bg-brand-ink px-4 py-2 text-sm font-semibold text-brand-soft transition hover:bg-brand-deep dark:bg-brand-accent dark:text-brand-ink">
+      <Link href="/contact" className="mt-6 inline-flex rounded-full bg-brand-accent px-4 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand-coral">
         Choose plan
       </Link>
     </article>

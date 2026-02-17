@@ -63,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className="dark">
+    <html lang="en-GB">
       <body className="font-sans">
         <Navbar />
         <main>{children}</main>
