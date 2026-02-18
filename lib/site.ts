@@ -38,6 +38,11 @@ export const faqs = [
     question: "Do you offer intensive courses?",
     answer:
       "Yes. Fast-track intensive plans are available for learners who want focused progress in a shorter timeframe."
+  },
+  {
+    question: "How does your pricing work?",
+    answer:
+      "Lessons are £43 per hour as standard. The rate is £47 per hour after 5pm on weekdays and all day Saturday. Sundays are closed."
   }
 ];
 
@@ -68,9 +73,9 @@ export const testimonials = [
 export const pricingPlans = [
   {
     title: "Single Lesson",
-    price: "£45",
-    subtitle: "Per hour",
-    description: "Perfect for flexible weekly progress.",
+    price: "£43",
+    subtitle: "Per hour standard",
+    description: "£47 per hour after 5pm weekdays and all day Saturday. Sundays closed.",
     features: [
       "1:1 automatic lesson",
       "Progress feedback after each session",
@@ -79,9 +84,9 @@ export const pricingPlans = [
   },
   {
     title: "5-Lesson Bundle",
-    price: "£215",
+    price: "£205",
     subtitle: "Save £10",
-    description: "Consistent momentum with better value.",
+    description: "Built from weekday daytime rates for better value.",
     features: [
       "5 x 1-hour lessons",
       "Structured milestone plan",
@@ -91,9 +96,9 @@ export const pricingPlans = [
   },
   {
     title: "10-Lesson Bundle",
-    price: "£420",
+    price: "£400",
     subtitle: "Save £30",
-    description: "Best for steady exam-focused progress.",
+    description: "Best value for consistent exam-focused progress.",
     features: [
       "10 x 1-hour lessons",
       "Mock test preparation",
@@ -102,7 +107,7 @@ export const pricingPlans = [
   },
   {
     title: "Intensive Example",
-    price: "£899",
+    price: "From £860",
     subtitle: "20 hours",
     description: "Fast-track training for urgent timelines.",
     features: [

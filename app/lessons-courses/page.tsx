@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const offerings = [
   {
     title: "Single Lessons",
-    price: "From £45 per hour",
+    price: "£43/hr standard | £47/hr peak",
     benefits: [
       "Flexible one-to-one scheduling",
       "Progress check every lesson",
@@ -26,7 +26,7 @@ const offerings = [
   },
   {
     title: "Block Booking Discounts",
-    price: "5 lessons from £215 | 10 lessons from £420",
+    price: "5 lessons from £205 | 10 lessons from £400",
     benefits: [
       "Lower hourly cost",
       "Consistent weekly momentum",
@@ -36,7 +36,7 @@ const offerings = [
   },
   {
     title: "Fast-Track Intensive Courses",
-    price: "Packages from £899",
+    price: "Packages from £860",
     benefits: [
       "Concentrated learning over 1-2 weeks",
       "Focused route and manoeuvre training",
@@ -46,7 +46,7 @@ const offerings = [
   },
   {
     title: "Refresher Lessons",
-    price: "From £45 per hour",
+    price: "£43/hr standard | £47/hr peak",
     benefits: [
       "Rebuild confidence after a break",
       "Urban driving and parking confidence",
@@ -62,7 +62,7 @@ export default function LessonsCoursesPage() {
       <PageHero
         eyebrow="Lessons & Courses"
         title="Automatic training options from beginner to advanced"
-        description="Choose a lesson structure that matches your pace, confidence level, and timeline. All courses are taught one-to-one by a professional female instructor."
+        description="Choose a lesson structure that matches your pace, confidence level, and timeline. Standard rate is £43/hr, with £47/hr after 5pm weekdays and all day Saturday. Sundays are closed."
       />
 
       <section className="mx-auto grid w-full max-w-6xl gap-5 px-4 pb-16 md:grid-cols-2 md:px-8">

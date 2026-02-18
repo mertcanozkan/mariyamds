@@ -14,7 +14,7 @@ const services = [
     title: "Single Driving Lessons",
     description: "Flexible one-to-one sessions for steady confidence-building and practical skill growth.",
     idealFor: "Learners who need weekly support and adaptable scheduling.",
-    price: "From £45/hr"
+    price: "From £43/hr"
   },
   {
     title: "Block Bookings",
@@ -99,7 +99,8 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-6xl px-4 py-6 md:px-8">
         <div className="mb-8 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">Pricing</p>
-          <h2 className="mt-2 font-heading text-3xl text-white md:text-4xl">From £45 per hour</h2>
+          <h2 className="mt-2 font-heading text-3xl text-white md:text-4xl">From £43 per hour</h2>
+          <p className="mt-2 text-sm text-white/75">£47 per hour after 5pm weekdays and all day Saturday. Sundays are closed.</p>
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {pricingPlans.map((plan) => (

@@ -20,7 +20,7 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title="Clear pricing with premium lesson quality"
-        description="All plans are designed for personalised one-to-one instruction. Most learners choose bundles for stronger continuity and better value."
+        description="Standard lessons are £43 per hour. The peak rate is £47 per hour after 5pm weekdays and all day Saturday. Sundays are closed."
       />
 
       <section className="mx-auto w-full max-w-6xl px-4 pb-16 md:px-8">
@@ -29,7 +29,7 @@ export default function PricingPage() {
             <PricingCard key={plan.title} {...plan} />
           ))}
         </div>
-        <p className="mt-6 text-center text-sm text-white/75">Pricing shown as example packages. Final intensive plans may vary by learner starting level and availability.</p>
+        <p className="mt-6 text-center text-sm text-white/75">Pricing shown as example packages. Peak-time lessons are charged at £47/hr. Final intensive plans may vary by learner starting level and availability.</p>
       </section>
 
       <CTASection

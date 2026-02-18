@@ -55,6 +55,7 @@ export default function ContactPage() {
           <article className="force-light-text rounded-3xl border border-brand-accent/35 bg-gradient-to-br from-brand-ink/95 to-brand-deep/88 p-6">
             <h3 className="font-heading text-2xl text-white">Lesson Calendar</h3>
             <p className="mt-2 text-sm text-white/80">Select your preferred lesson date and time, then confirm instantly via WhatsApp.</p>
+            <p className="mt-2 text-xs text-white/70">Rate guide: £43/hr standard, £47/hr after 5pm weekdays and all day Saturday. Sundays closed.</p>
             <CalendarWidget whatsappNumber={siteConfig.whatsapp} />
           </article>
         </aside>

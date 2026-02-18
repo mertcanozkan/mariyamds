@@ -44,7 +44,7 @@ const localBusinessSchema = {
   email: siteConfig.email,
   areaServed: ["Stoke Newington", "Hackney", "London"],
   image: "https://images.unsplash.com/photo-1613145993488-38fa511b4b65?auto=format&fit=crop&w=1200&q=80",
-  priceRange: "£45-£899",
+  priceRange: "£43-£47 per hour",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Stoke Newington",
