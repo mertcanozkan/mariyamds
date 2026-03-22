@@ -38,14 +38,22 @@ export default function Avatar({ src, name, size = "md", className }: AvatarProp
     const isExternal = src.startsWith("http") || src.startsWith("//");
     if (isExternal) {
       return (
-        <div className={cn("relative rounded-full overflow-hidden flex-shrink-0", sizes[size], className)}>
+        <div
+          className={cn("relative rounded-full overflow-hidden flex-shrink-0", sizes[size], className)}
+          role="img"
+          aria-label={`${name}'s profile photo`}
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={src} alt={name} className="w-full h-full object-cover" />
         </div>
       );
     }
     return (
-      <div className={cn("relative rounded-full overflow-hidden flex-shrink-0", sizes[size], className)}>
+      <div
+        className={cn("relative rounded-full overflow-hidden flex-shrink-0", sizes[size], className)}
+        role="img"
+        aria-label={`${name}'s profile photo`}
+      >
         <Image src={src} alt={name} fill className="object-cover" />
       </div>
     );
@@ -59,8 +67,10 @@ export default function Avatar({ src, name, size = "md", className }: AvatarProp
         sizes[size],
         className
       )}
+      role="img"
+      aria-label={`${name}'s avatar`}
     >
-      {initials}
+      <span aria-hidden="true">{initials}</span>
     </div>
   );
 }

@@ -25,28 +25,24 @@ export default function StarRating({
   const px = sizes[size];
 
   return (
-    <div className={cn("flex items-center gap-1", className)}>
-      <div className="flex items-center gap-0.5">
+    <div
+      className={cn("flex items-center gap-1", className)}
+      role="img"
+      aria-label={`Rated ${rating.toFixed(1)} out of ${max} stars`}
+    >
+      <div className="flex items-center gap-0.5" aria-hidden="true">
         {Array.from({ length: max }).map((_, i) => {
           const filled = i < Math.floor(rating);
           const partial = !filled && i < rating;
           return (
             <div key={i} className="relative">
-              <Star
-                size={px}
-                className="text-slate-700"
-                fill="currentColor"
-              />
+              <Star size={px} className="text-slate-700" fill="currentColor" />
               {(filled || partial) && (
                 <div
                   className="absolute inset-0 overflow-hidden"
                   style={{ width: partial ? `${(rating % 1) * 100}%` : "100%" }}
                 >
-                  <Star
-                    size={px}
-                    className="text-amber-400"
-                    fill="currentColor"
-                  />
+                  <Star size={px} className="text-amber-400" fill="currentColor" />
                 </div>
               )}
             </div>
@@ -54,7 +50,13 @@ export default function StarRating({
         })}
       </div>
       {showValue && (
-        <span className={cn("font-semibold text-amber-400", size === "sm" ? "text-xs" : size === "md" ? "text-sm" : "text-base")}>
+        <span
+          aria-hidden="true"
+          className={cn(
+            "font-semibold text-amber-400",
+            size === "sm" ? "text-xs" : size === "md" ? "text-sm" : "text-base"
+          )}
+        >
           {rating.toFixed(1)}
         </span>
       )}

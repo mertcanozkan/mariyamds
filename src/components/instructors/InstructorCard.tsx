@@ -30,10 +30,11 @@ export default function InstructorCard({ instructor, index = 0 }: InstructorCard
   const popularPackage = instructor.packages.find((p) => p.popular);
 
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.4) }}
+      aria-label={`${instructor.name}, driving instructor in ${instructor.location.city}`}
       className="group rounded-xl border border-white/8 bg-[#0f1117] hover:border-white/15 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all duration-300"
     >
       <div className="p-5">
@@ -47,25 +48,34 @@ export default function InstructorCard({ instructor, index = 0 }: InstructorCard
                 <div className="flex items-center gap-1.5 mb-0.5">
                   <h3 className="font-semibold text-white text-sm leading-tight">{instructor.name}</h3>
                   {instructor.dvsaApproved && (
-                    <Shield size={13} className="text-blue-400 flex-shrink-0" aria-label="DVSA Approved ADI" />
+                    <Shield
+                      size={13}
+                      className="text-blue-400 flex-shrink-0"
+                      aria-label="DVSA Approved ADI"
+                    />
                   )}
                 </div>
                 <div className="flex items-center gap-1 text-xs text-slate-500 mb-1.5">
-                  <MapPin size={10} />
+                  <MapPin size={10} aria-hidden="true" />
                   <span>{instructor.location.city} · {instructor.location.coverageRadius} mile radius</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <StarRating rating={instructor.rating} showValue size="sm" />
-                  <span className="text-xs text-slate-600">({instructor.reviewCount})</span>
+                  <span className="text-xs text-slate-600" aria-label={`${instructor.reviewCount} reviews`}>
+                    ({instructor.reviewCount})
+                  </span>
                 </div>
               </div>
 
               <button
                 onClick={() => setSaved(!saved)}
+                aria-pressed={saved}
+                aria-label={saved ? `Remove ${instructor.name} from saved` : `Save ${instructor.name}`}
                 className="p-1.5 rounded-lg hover:bg-white/8 transition-colors flex-shrink-0"
               >
                 <Heart
                   size={14}
+                  aria-hidden="true"
                   className={cn(
                     "transition-colors",
                     saved ? "text-red-400 fill-red-400" : "text-slate-600 hover:text-slate-400"
@@ -77,7 +87,7 @@ export default function InstructorCard({ instructor, index = 0 }: InstructorCard
         </div>
 
         {/* Instructor badges */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="flex flex-wrap gap-1.5 mb-4" aria-label="Instructor badges">
           {instructor.badges.slice(0, 3).map((badge) => {
             const config = badgeConfig[badge];
             return (
@@ -89,25 +99,25 @@ export default function InstructorCard({ instructor, index = 0 }: InstructorCard
         </div>
 
         {/* Details grid */}
-        <div className="grid grid-cols-3 gap-2 mb-4 text-center">
+        <dl className="grid grid-cols-3 gap-2 mb-4 text-center">
           <div className="rounded-lg bg-white/4 py-2 px-1">
-            <div className="text-sm font-bold text-white">{instructor.passRate}%</div>
-            <div className="text-[10px] text-slate-500">pass rate</div>
+            <dt className="text-[10px] text-slate-500">pass rate</dt>
+            <dd className="text-sm font-bold text-white">{instructor.passRate}%</dd>
           </div>
           <div className="rounded-lg bg-white/4 py-2 px-1">
-            <div className="text-sm font-bold text-white">{instructor.experience}yrs</div>
-            <div className="text-[10px] text-slate-500">experience</div>
+            <dt className="text-[10px] text-slate-500">experience</dt>
+            <dd className="text-sm font-bold text-white">{instructor.experience} yrs</dd>
           </div>
           <div className="rounded-lg bg-white/4 py-2 px-1">
-            <div className="text-sm font-bold text-white capitalize">
+            <dt className="text-[10px] text-slate-500">gearbox</dt>
+            <dd className="text-sm font-bold text-white capitalize">
               {instructor.transmission === "both" ? "Man/Auto" : instructor.transmission}
-            </div>
-            <div className="text-[10px] text-slate-500">gearbox</div>
+            </dd>
           </div>
-        </div>
+        </dl>
 
         {/* Vehicle & transmission */}
-        <div className="flex items-center gap-3 text-xs text-slate-500 mb-4">
+        <div className="flex items-center gap-3 text-xs text-slate-500 mb-4" aria-hidden="true">
           <div className="flex items-center gap-1">
             {instructor.transmission !== "automatic" && <Settings size={10} />}
             {instructor.transmission === "both" && <span>&</span>}
@@ -122,18 +132,21 @@ export default function InstructorCard({ instructor, index = 0 }: InstructorCard
         </div>
 
         {/* Specialisms */}
-        <div className="flex flex-wrap gap-1 mb-4">
+        <ul className="flex flex-wrap gap-1 mb-4" aria-label="Specialisms">
           {instructor.specialisms.slice(0, 3).map((s) => (
-            <span key={s} className="text-[10px] text-slate-500 px-2 py-0.5 rounded-full border border-white/6 bg-white/3">
+            <li
+              key={s}
+              className="text-[10px] text-slate-500 px-2 py-0.5 rounded-full border border-white/6 bg-white/3"
+            >
               {s}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Price & CTA */}
         <div className="flex items-center justify-between pt-3 border-t border-white/6">
           <div>
-            <div className="text-xl font-bold text-white">
+            <div className="text-xl font-bold text-white" aria-label={`${formatPricePerHour(instructor.pricePerHour)} per hour`}>
               {formatPricePerHour(instructor.pricePerHour)}
             </div>
             {popularPackage && (
@@ -142,11 +155,11 @@ export default function InstructorCard({ instructor, index = 0 }: InstructorCard
               </div>
             )}
           </div>
-          <Link href={`/instructors/${instructor.slug}`}>
+          <Link href={`/instructors/${instructor.slug}`} aria-label={`View profile of ${instructor.name}`}>
             <Button size="sm" variant="outline">View Profile</Button>
           </Link>
         </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 }

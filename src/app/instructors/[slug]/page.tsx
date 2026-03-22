@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   MapPin, Shield, Star, Clock, Car, Globe, CheckCircle, Award,
@@ -15,6 +16,42 @@ import Button from "@/components/ui/Button";
 import { Instructor, InstructorBadge, Transmission } from "@/lib/types";
 
 export const dynamicParams = true;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const instructor = await getInstructor(slug);
+  if (!instructor) return { title: "Instructor Not Found" };
+
+  const price = `£${(instructor.pricePerHour / 100).toFixed(0)}/hr`;
+  const description =
+    instructor.bio ||
+    `Book driving lessons with ${instructor.name}, a DVSA-approved instructor in ${instructor.location.city}. From ${price}.`;
+  const url = `https://mcodev.co.uk/instructors/${slug}`;
+
+  return {
+    title: `${instructor.name} — Driving Instructor in ${instructor.location.city}`,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${instructor.name} | Driving Instructor | MCO-DS UK`,
+      description,
+      url,
+      type: "profile",
+      ...(instructor.avatar !== "/images/default-avatar.png"
+        ? { images: [{ url: instructor.avatar, width: 400, height: 400, alt: instructor.name }] }
+        : {}),
+    },
+    twitter: {
+      card: "summary",
+      title: `${instructor.name} — Driving Instructor`,
+      description,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return MOCK_INSTRUCTORS.map((i) => ({ slug: i.slug }));
@@ -114,8 +151,44 @@ export default async function InstructorProfilePage({
 
   const reviews = MOCK_REVIEWS.filter((r) => r.instructorId === instructor.id);
 
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: instructor.name,
+    jobTitle: "Driving Instructor",
+    description: instructor.bio,
+    image: instructor.avatar !== "/images/default-avatar.png" ? instructor.avatar : undefined,
+    url: `https://mcodev.co.uk/instructors/${instructor.slug}`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: instructor.location.city,
+      addressCountry: "GB",
+      postalCode: instructor.location.postcode,
+    },
+    knowsAbout: instructor.specialisms,
+    knowsLanguage: instructor.languages,
+    worksFor: {
+      "@type": "Organization",
+      name: "MCO-DS UK",
+      url: "https://mcodev.co.uk",
+    },
+    ...(instructor.rating > 0 && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: instructor.rating,
+        reviewCount: instructor.reviewCount,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    }),
+  };
+
   return (
     <div className="min-h-screen pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       {/* Back nav */}
       <div className="border-b border-white/8 bg-[#0f1117]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3">
