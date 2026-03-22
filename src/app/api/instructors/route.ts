@@ -35,7 +35,7 @@ export async function GET() {
     });
 
     const instructors: Instructor[] = await Promise.all(
-      users.map(async (u) => {
+      users.map(async (u: (typeof users)[number]) => {
         const location = u.postcode ? await resolvePostcode(u.postcode) : null;
         const name = u.name ?? "Instructor";
         const slug = name.toLowerCase().replace(/\s+/g, "-") + "-" + u.id.slice(-6);
