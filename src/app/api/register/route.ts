@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/db";
 
+export const runtime = "nodejs";
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -63,7 +65,11 @@ export async function POST(req: NextRequest) {
       { status: 201 }
     );
   } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
     console.error("[POST /api/register]", err);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal server error", detail: message },
+      { status: 500 }
+    );
   }
 }
