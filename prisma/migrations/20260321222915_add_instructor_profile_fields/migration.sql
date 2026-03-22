@@ -1,0 +1,7 @@
+-- AlterTable
+ALTER TABLE "User" ADD COLUMN "bio" TEXT;
+ALTER TABLE "User" ADD COLUMN "coverageRadius" INTEGER;
+ALTER TABLE "User" ADD COLUMN "languages" TEXT;
+ALTER TABLE "User" ADD COLUMN "phone" TEXT;
+ALTER TABLE "User" ADD COLUMN "pricePerHour" INTEGER;
+ALTER TABLE "User" ADD COLUMN "specialisms" TEXT;

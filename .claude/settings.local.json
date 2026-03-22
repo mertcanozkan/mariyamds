@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "WebSearch",
+      "WebFetch(domain:drivewithaa.co.uk)",
+      "WebFetch(domain:www.bsm.co.uk)",
+      "WebFetch(domain:www.reddrivingschool.com)",
+      "WebFetch(domain:postcodes.io)",
+      "WebFetch(domain:api.postcodes.io)",
+      "WebFetch(domain:getaddress.io)",
+      "WebFetch(domain:osdatahub.os.uk)",
+      "Bash(xargs sed:*)",
+      "Bash(npx prisma:*)",
+      "Bash(PRISMA_USER_CONSENT_FOR_DANGEROUS_AI_ACTION=\"yes\" npx prisma migrate reset --force)",
+      "Bash(node -e \"const {PrismaClient} = require\\(''''@prisma/client''''\\); const c = new PrismaClient\\(\\); console.log\\(''''ok''''\\)\")"
+    ]
+  }
+}
