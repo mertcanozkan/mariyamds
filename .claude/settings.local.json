@@ -14,7 +14,10 @@
       "Bash(xargs sed:*)",
       "Bash(npx prisma:*)",
       "Bash(PRISMA_USER_CONSENT_FOR_DANGEROUS_AI_ACTION=\"yes\" npx prisma migrate reset --force)",
-      "Bash(node -e \"const {PrismaClient} = require\\(''''@prisma/client''''\\); const c = new PrismaClient\\(\\); console.log\\(''''ok''''\\)\")"
+      "Bash(node -e \"const {PrismaClient} = require\\(''''@prisma/client''''\\); const c = new PrismaClient\\(\\); console.log\\(''''ok''''\\)\")",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)"
     ]
   }
 }
