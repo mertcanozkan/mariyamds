@@ -42,7 +42,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/book"
             className="rounded-full bg-brand-accent px-4 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand-coral"
           >
             Book Now
@@ -68,7 +68,7 @@ export default function Navbar() {
             ))}
             <div className="flex items-center justify-end pt-2">
               <Link
-                href="/contact"
+                href="/book"
                 className="rounded-full bg-brand-accent px-4 py-2 text-sm font-semibold text-brand-ink"
                 onClick={() => setOpen(false)}
               >

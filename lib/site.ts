@@ -18,6 +18,8 @@ export const navLinks = [
   { href: "/contact", label: "Contact" }
 ];
 
+export const bookingLink = { href: "/book", label: "Book a Lesson" };
+
 export const faqs = [
   {
     question: "Do you teach complete beginners?",

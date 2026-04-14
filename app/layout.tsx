@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import Chatbot from "@/components/chatbot";
 import CookieBanner from "@/components/cookie-banner";
 import FloatingBookNow from "@/components/floating-book-now";
 import Footer from "@/components/footer";
@@ -63,12 +64,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB">
+    <html lang="en-GB" suppressHydrationWarning>
       <body className="font-sans">
         <Navbar />
         <main>{children}</main>
         <Footer />
         <FloatingBookNow />
+        <Chatbot />
         <CookieBanner />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       </body>
